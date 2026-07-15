@@ -21,6 +21,9 @@
   a:hover { color: #2E6FA0; }
   summary::-webkit-details-marker { display: none; }
   details[open] .faq-chev { transform: rotate(45deg); }
+  @keyframes sc-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .sc-marquee-track { animation: sc-marquee-scroll 38s linear infinite; }
+  .sc-marquee-track.sc-marquee-right { animation-direction: reverse; }
 </style>
 </helmet>
 
@@ -59,6 +62,48 @@
     </div>
   </div>
 </header>
+
+<!-- ===== VEJA O MATERIAL POR DENTRO ===== -->
+<section data-screen-label="Veja o material por dentro" style="padding: clamp(48px, 7vw, 80px) 0; background: #fff; overflow: hidden;">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; text-align: center; display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(28px, 4vw, 40px);">
+    <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #9B7EDE; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Por dentro do material</div>
+    <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); color: #26324B;">Veja o material por dentro</h2>
+  </div>
+
+  <div style="width: 100%; overflow: hidden;">
+    <div class="sc-marquee-track" style="display: flex; gap: 16px; width: max-content;">
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-1" shape="rect" placeholder="Página A5 — miolo 1" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-2" shape="rect" placeholder="Página A5 — miolo 2" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-3" shape="rect" placeholder="Página A5 — miolo 3" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-4" shape="rect" placeholder="Página A5 — miolo 4" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-5" shape="rect" placeholder="Página A5 — miolo 5" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-6" shape="rect" placeholder="Página A5 — miolo 6" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-1-dup" shape="rect" placeholder="Página A5 — miolo 1" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-2-dup" shape="rect" placeholder="Página A5 — miolo 2" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-3-dup" shape="rect" placeholder="Página A5 — miolo 3" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-4-dup" shape="rect" placeholder="Página A5 — miolo 4" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-5-dup" shape="rect" placeholder="Página A5 — miolo 5" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-esq-6-dup" shape="rect" placeholder="Página A5 — miolo 6" hint-size="100%,100%"></x-import></div>
+    </div>
+  </div>
+
+  <div style="width: 100%; overflow: hidden; margin-top: 16px;">
+    <div class="sc-marquee-track sc-marquee-right" style="display: flex; gap: 16px; width: max-content;">
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-1" shape="rect" placeholder="Página A5 — miolo 7" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-2" shape="rect" placeholder="Página A5 — miolo 8" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-3" shape="rect" placeholder="Página A5 — miolo 9" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-4" shape="rect" placeholder="Página A5 — miolo 10" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-5" shape="rect" placeholder="Página A5 — miolo 11" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-6" shape="rect" placeholder="Página A5 — miolo 12" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-1-dup" shape="rect" placeholder="Página A5 — miolo 7" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-2-dup" shape="rect" placeholder="Página A5 — miolo 8" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-3-dup" shape="rect" placeholder="Página A5 — miolo 9" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-4-dup" shape="rect" placeholder="Página A5 — miolo 10" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-5-dup" shape="rect" placeholder="Página A5 — miolo 11" hint-size="100%,100%"></x-import></div>
+      <div style="width: clamp(140px, 20vw, 220px); aspect-ratio: 148 / 210; border-radius: 12px; overflow: hidden; flex-shrink: 0;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="miolo-dir-6-dup" shape="rect" placeholder="Página A5 — miolo 12" hint-size="100%,100%"></x-import></div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== O PROBLEMA ===== -->
 <section data-screen-label="O problema" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
@@ -171,36 +216,43 @@
       </div>
 
       <div style="background: #fff; border-top: 6px solid #9B7EDE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-1-caderno-emocoes" shape="rect" placeholder="Foto: Caderno das Emoções" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #9B7EDE; letter-spacing: 0.06em;">BÔNUS 1</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Caderno das Emoções</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Ajuda a criança a reconhecer e nomear o que sente, com apoio visual.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #F7C948; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-2-missoes-recompensas" shape="rect" placeholder="Foto: Missões e Recompensas" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #C9971B; letter-spacing: 0.06em;">BÔNUS 2</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Missões e Recompensas</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Estrelas, selos e medalhas para transformar responsabilidades em conquistas.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #4EA8DE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-3-guia-pratico" shape="rect" placeholder="Foto: Guia Prático dos Pais" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #3E8FC7; letter-spacing: 0.06em;">BÔNUS 3</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Guia Prático dos Pais</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">O passo a passo para aplicar o sistema em poucos minutos por dia.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #57B876; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-4-cartoes-comunicacao" shape="rect" placeholder="Foto: Cartões de Comunicação Visual" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #3C8C5C; letter-spacing: 0.06em;">BÔNUS 4</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Cartões de Comunicação Visual</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Combinados visuais que reduzem a necessidade de repetir ordens.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #F5A25D; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-5-primeiro-depois" shape="rect" placeholder="Foto: Primeiro → Depois" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #D9822B; letter-spacing: 0.06em;">BÔNUS 5</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Primeiro → Depois</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A ferramenta clássica de transição: mostra o que vem agora e o que vem em seguida.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #9B7EDE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-6-rotinas-ambiente" shape="rect" placeholder="Foto: Rotinas por Ambiente" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #9B7EDE; letter-spacing: 0.06em;">BÔNUS 6</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Rotinas por Ambiente</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Sequências prontas para banheiro, quarto, refeições e hora de sair de casa.</p>
       </div>
       <div style="background: #fff; border-top: 6px solid #4EA8DE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="bonus-7-calendario-visual" shape="rect" placeholder="Foto: Calendário Visual" hint-size="100%,100%"></x-import></div>
         <div style="font-size: 13px; font-weight: 800; color: #3E8FC7; letter-spacing: 0.06em;">BÔNUS 7</div>
         <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Calendário Visual</div>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A visão do mês inteiro para antecipar mudanças, datas especiais e consultas.</p>
@@ -270,6 +322,7 @@
       <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); color: #26324B;">Tudo o que sua família recebe hoje</h2>
     </div>
     <div style="background: #fff; border-radius: 28px; padding: clamp(24px, 4vw, 40px); box-shadow: 0 20px 50px rgba(62,143,199,0.15); display: flex; flex-direction: column; gap: 18px;">
+      <div style="width: 100%; max-width: 320px; margin: 0 auto; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="oferta-kit-completo" shape="rect" placeholder="Foto: kit completo (oferta)" hint-size="100%,100%"></x-import></div>
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 2px dashed #EDF2F7; font-size: 16px;"><span style="font-weight: 800; color: #26324B;">Kit Planner Rotina TEA</span><span style="font-weight: 700; color: #4EA8DE; white-space: nowrap;">Módulo principal</span></div>
         <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Caderno das Emoções</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>

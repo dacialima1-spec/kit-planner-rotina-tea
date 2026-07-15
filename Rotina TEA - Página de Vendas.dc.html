@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit Planner Rotina TEA — Sistema Visual de Organização</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FFFDF6; color: #33415C; font-family: 'Nunito', sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #3E8FC7; text-decoration: none; }
+  a:hover { color: #2E6FA0; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] .faq-chev { transform: rotate(45deg); }
+</style>
+</helmet>
+
+<!-- ===== HERO ===== -->
+<header data-screen-label="Hero" style="background: linear-gradient(180deg, #EAF5FC 0%, #FFFDF6 100%); padding: clamp(24px, 5vw, 56px) 24px clamp(48px, 7vw, 88px);">
+  <div style="max-width: 1120px; margin: 0 auto;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(36px, 6vw, 72px);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 42px; height: 42px; border-radius: 14px; background: #4EA8DE; display: grid; place-items: center; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px;">R</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 22px; color: #33415C;">Rotina <span style="color: #4EA8DE;">TEA</span></div>
+      </div>
+      <a href="#oferta" style="background: #F5A25D; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 16px; padding: 12px 24px; border-radius: 999px; box-shadow: 0 4px 0 rgba(200,115,40,0.35);" style-hover="background: #ED8F41; color: #fff;">Quero começar hoje</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #FFF; border: 2px solid #CBE6F5; border-radius: 999px; padding: 8px 16px; font-weight: 700; font-size: 14px; color: #3E8FC7;">Para famílias de crianças com TEA de 3 a 10 anos</div>
+        <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(30px, 4.5vw, 48px); line-height: 1.15; color: #26324B; text-wrap: balance;">{{ headline }}</h1>
+        <p style="margin: 0; font-size: clamp(17px, 2vw, 20px); line-height: 1.6; color: #52607A; max-width: 54ch;">Mais previsibilidade. Mais organização. Menos estresse. Tudo através de materiais visuais simples de imprimir e usar — sem precisar entender de métodos complicados.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+          <a href="#oferta" style="background: #F5A25D; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 999px; box-shadow: 0 5px 0 rgba(200,115,40,0.35);" style-hover="background: #ED8F41; color: #fff;">Quero organizar nossa rotina</a>
+          <div style="font-size: 14px; font-weight: 700; color: #6B7A94;">Acesso imediato · Imprima só o que precisar</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; background: #E9F7EE; color: #3C8C5C; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 800;">✓ Previsibilidade</div>
+          <div style="display: flex; align-items: center; gap: 8px; background: #FFF6E3; color: #B8860B; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 800;">✓ Autonomia</div>
+          <div style="display: flex; align-items: center; gap: 8px; background: #F1ECFB; color: #7A5FC0; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 800;">✓ Tranquilidade</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(78,168,222,0.18); border: 6px solid #fff; background: #fff;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-kit" shape="rect" placeholder="Imagem do Kit Rotina TEA (mockup do sistema completo)" hint-size="100%,100%"></x-import>
+        </div>
+        <div style="text-align: center; font-size: 13px; font-weight: 700; color: #8A97AD;">Sistema Visual de Organização TEA — Kit completo</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== O PROBLEMA ===== -->
+<section data-screen-label="O problema" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
+  <div style="max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+    <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #F5A25D; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Por que a rotina é tão difícil?</div>
+    <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(26px, 3.5vw, 38px); color: #26324B; line-height: 1.2;">Se todo dia parece uma batalha, o problema não é você. Nem seu filho.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #52607A;">Você já pesquisou tudo sobre autismo. Já acompanha profissionais, já tentou aplicativos, quadros de rotina, brinquedos educativos. Mesmo assim, a sensação é a mesma:</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px;">
+      <div style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 20px 22px; font-size: 16px; line-height: 1.5; color: #52607A;"><em>"Meu filho depende de mim para tudo."</em></div>
+      <div style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 20px 22px; font-size: 16px; line-height: 1.5; color: #52607A;"><em>"Quando muda qualquer coisa, ele entra em crise."</em></div>
+      <div style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 20px 22px; font-size: 16px; line-height: 1.5; color: #52607A;"><em>"Estou cansada de repetir a mesma coisa o dia inteiro."</em></div>
+    </div>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #52607A;">Quando a criança não sabe o que vai acontecer, cada dia é diferente. E onde não existe previsibilidade, existe ansiedade, resistência e crise. Você não precisa de mais informação. <strong style="color: #26324B;">Você precisa de organização.</strong></p>
+  </div>
+</section>
+
+<!-- ===== A GRANDE IDEIA ===== -->
+<section data-screen-label="A grande ideia" style="padding: clamp(56px, 8vw, 96px) 24px; background: #EAF5FC;">
+  <div style="max-width: 880px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 22px; align-items: center;">
+    <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #3E8FC7; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">A grande ideia</div>
+    <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(26px, 3.5vw, 40px); color: #26324B; line-height: 1.25; text-wrap: balance;">Muitas crianças com TEA só precisam <span style="color: #4EA8DE;">enxergar a rotina</span>.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #52607A; max-width: 62ch;">O problema não é falta de inteligência, de vontade ou de esforço. Quando a criança consegue visualizar o dia, tudo fica mais previsível. Quando existe previsibilidade, existe segurança. E quando existe segurança, a autonomia aparece naturalmente.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px;">
+      <div style="background: #fff; border-radius: 999px; padding: 12px 22px; color: #3E8FC7; box-shadow: 0 3px 8px rgba(62,143,199,0.15);">Visualizar</div>
+      <div style="color: #9DB6C9; font-size: 20px;">→</div>
+      <div style="background: #fff; border-radius: 999px; padding: 12px 22px; color: #3C8C5C; box-shadow: 0 3px 8px rgba(60,140,92,0.15);">Previsibilidade</div>
+      <div style="color: #9DB6C9; font-size: 20px;">→</div>
+      <div style="background: #fff; border-radius: 999px; padding: 12px 22px; color: #B8860B; box-shadow: 0 3px 8px rgba(184,134,11,0.15);">Segurança</div>
+      <div style="color: #9DB6C9; font-size: 20px;">→</div>
+      <div style="background: #fff; border-radius: 999px; padding: 12px 22px; color: #7A5FC0; box-shadow: 0 3px 8px rgba(122,95,192,0.15);">Autonomia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANTES / DEPOIS ===== -->
+<section data-screen-label="Antes e depois" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
+  <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 22px;">
+    <div style="background: #fff; border: 2px solid #F0EAD9; border-radius: 24px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: #8A97AD;">Antes</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5; color: #52607A;">
+        <div style="display: flex; gap: 10px;"><span style="color: #D9A05B;">•</span><span>Todos os dias são diferentes e imprevisíveis</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #D9A05B;">•</span><span>A criança não sabe o que vai acontecer</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #D9A05B;">•</span><span>Os pais vivem repetindo ordens</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #D9A05B;">•</span><span>Ansiedade, resistência e crises frequentes</span></div>
+      </div>
+    </div>
+    <div style="background: #E9F7EE; border: 2px solid #C9E9D5; border-radius: 24px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: #3C8C5C;">Depois</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5; color: #3D5548;">
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>A criança consegue enxergar o próprio dia</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Sabe qual é o próximo passo e entende a sequência</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Conquista pequenas responsabilidades todos os dias</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Os pais deixam de improvisar e a casa fica mais organizada</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APRESENTAÇÃO + 4 PILARES ===== -->
+<section data-screen-label="Como funciona" style="padding: clamp(56px, 8vw, 96px) 24px; background: #fff;">
+  <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(32px, 5vw, 48px);">
+    <div style="text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #3E8FC7; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Apresentando</div>
+      <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 42px); color: #26324B; line-height: 1.2;">Sistema Visual de Organização TEA</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #52607A; max-width: 60ch;">Não é um planner. Não é um material pedagógico. É um sistema visual completo que ajuda sua família a criar uma rotina organizada e previsível — apoiado em quatro pilares simples.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 18px;">
+      <div style="background: #EAF5FC; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 16px; background: #4EA8DE; color: #fff; display: grid; place-items: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px;">1</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; color: #26324B;">Planejamento</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A família organiza a semana e o dia com antecedência, sem improviso.</p>
+      </div>
+      <div style="background: #E9F7EE; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 16px; background: #57B876; color: #fff; display: grid; place-items: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px;">2</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; color: #26324B;">Rotinas Visuais</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A criança enxerga a sequência do dia em quadros claros e previsíveis.</p>
+      </div>
+      <div style="background: #FFF3E6; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 16px; background: #F5A25D; color: #fff; display: grid; place-items: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px;">3</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; color: #26324B;">Comunicação Visual</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Cartões que substituem a repetição de ordens por combinados visuais.</p>
+      </div>
+      <div style="background: #F1ECFB; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 16px; background: #9B7EDE; color: #fff; display: grid; place-items: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px;">4</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; color: #26324B;">Reforço Positivo</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Estrelas, selos e medalhas transformam cada passo em uma pequena conquista.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O QUE VOCÊ RECEBE ===== -->
+<section data-screen-label="O que você recebe" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
+  <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px);">
+    <div style="text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #F5A25D; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">O que você recebe</div>
+      <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); color: #26324B;">Um sistema completo, módulo por módulo</h2>
+      <p style="margin: 0; font-size: 17px; color: #52607A; max-width: 58ch; line-height: 1.7;">Cada módulo tem uma cor própria para facilitar a identificação — pela criança e por você.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px;">
+      <div style="grid-column: 1 / -1; background: #fff; border: 3px solid #4EA8DE; border-radius: 24px; padding: clamp(24px, 3vw, 32px); display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
+        <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="align-self: flex-start; background: #4EA8DE; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 6px 14px; border-radius: 999px;">MÓDULO PRINCIPAL</div>
+          <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; color: #26324B;">Kit Planner Rotina TEA</div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #52607A;">O coração do sistema: quadros de rotina diária e semanal, sequências numeradas, checklists grandes e espaços amplos para personalizar a rotina da sua família.</p>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 260px; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="modulo-principal" shape="rounded" radius="16" placeholder="Foto do Kit Planner" hint-size="100%,100%"></x-import>
+        </div>
+      </div>
+
+      <div style="background: #fff; border-top: 6px solid #9B7EDE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #9B7EDE; letter-spacing: 0.06em;">BÔNUS 1</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Caderno das Emoções</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Ajuda a criança a reconhecer e nomear o que sente, com apoio visual.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #F7C948; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #C9971B; letter-spacing: 0.06em;">BÔNUS 2</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Missões e Recompensas</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Estrelas, selos e medalhas para transformar responsabilidades em conquistas.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #4EA8DE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #3E8FC7; letter-spacing: 0.06em;">BÔNUS 3</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Guia Prático dos Pais</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">O passo a passo para aplicar o sistema em poucos minutos por dia.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #57B876; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #3C8C5C; letter-spacing: 0.06em;">BÔNUS 4</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Cartões de Comunicação Visual</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Combinados visuais que reduzem a necessidade de repetir ordens.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #F5A25D; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #D9822B; letter-spacing: 0.06em;">BÔNUS 5</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Primeiro → Depois</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A ferramenta clássica de transição: mostra o que vem agora e o que vem em seguida.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #9B7EDE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #9B7EDE; letter-spacing: 0.06em;">BÔNUS 6</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Rotinas por Ambiente</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">Sequências prontas para banheiro, quarto, refeições e hora de sair de casa.</p>
+      </div>
+      <div style="background: #fff; border-top: 6px solid #4EA8DE; border-radius: 20px; padding: 24px; box-shadow: 0 4px 14px rgba(51,65,92,0.06); display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 800; color: #3E8FC7; letter-spacing: 0.06em;">BÔNUS 7</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: #26324B;">Calendário Visual</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A;">A visão do mês inteiro para antecipar mudanças, datas especiais e consultas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEMONSTRAÇÃO ===== -->
+<section data-screen-label="Demonstração" style="padding: clamp(56px, 8vw, 96px) 24px; background: #fff;">
+  <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(24px, 4vw, 40px);">
+    <div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #57B876; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Veja de perto</div>
+      <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); color: #26324B;">Como o sistema funciona na vida real</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; border: 2px solid #F0EAD9;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="demo-rotina" shape="rect" placeholder="Foto: quadro de rotina em uso" hint-size="100%,100%"></x-import>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #52607A; text-align: center;">O quadro de rotina montado na parede</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; border: 2px solid #F0EAD9;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="demo-cartoes" shape="rect" placeholder="Foto: cartões de comunicação (zoom)" hint-size="100%,100%"></x-import>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #52607A; text-align: center;">Cartões de comunicação em detalhe</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; border: 2px solid #F0EAD9;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="demo-crianca" shape="rect" placeholder="Foto: criança usando o sistema" hint-size="100%,100%"></x-import>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #52607A; text-align: center;">Uso real: a criança marcando suas conquistas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARA QUEM É / NÃO É ===== -->
+<section data-screen-label="Para quem é" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
+  <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 22px;">
+    <div style="background: #E9F7EE; border-radius: 24px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: #3C8C5C;">Para quem é</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3D5548;">
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Pais e mães de crianças com TEA entre 3 e 10 anos</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Famílias que querem uma rotina mais previsível e organizada</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Professores, ATs, terapeutas, avós e cuidadores</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #3C8C5C;">✓</span><span>Quem já tentou apps e quadros, mas não conseguiu manter consistência</span></div>
+      </div>
+    </div>
+    <div style="background: #fff; border: 2px solid #F0EAD9; border-radius: 24px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: #8A97AD;">Para quem não é</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #52607A;">
+        <div style="display: flex; gap: 10px;"><span style="color: #C9971B;">•</span><span>Quem busca tratamento ou promessa de "reduzir sintomas"</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #C9971B;">•</span><span>Quem procura um curso teórico sobre autismo</span></div>
+        <div style="display: flex; gap: 10px;"><span style="color: #C9971B;">•</span><span>Quem não pode dedicar alguns minutos por dia à rotina</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section id="oferta" data-screen-label="Oferta" style="padding: clamp(56px, 8vw, 96px) 24px; background: #EAF5FC;">
+  <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+    <div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+      <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; color: #3E8FC7; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Oferta completa</div>
+      <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); color: #26324B;">Tudo o que sua família recebe hoje</h2>
+    </div>
+    <div style="background: #fff; border-radius: 28px; padding: clamp(24px, 4vw, 40px); box-shadow: 0 20px 50px rgba(62,143,199,0.15); display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 2px dashed #EDF2F7; font-size: 16px;"><span style="font-weight: 800; color: #26324B;">Kit Planner Rotina TEA</span><span style="font-weight: 700; color: #4EA8DE; white-space: nowrap;">Módulo principal</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Caderno das Emoções</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Missões e Recompensas</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Guia Prático dos Pais</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Cartões de Comunicação Visual</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Primeiro → Depois</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 2px dashed #EDF2F7; font-size: 15px; color: #52607A;"><span>Rotinas por Ambiente</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 15px; color: #52607A;"><span>Calendário Visual</span><span style="font-weight: 700; color: #57B876; white-space: nowrap;">Bônus</span></div>
+      </div>
+      <div style="background: #FFFDF6; border: 2px solid #F0EAD9; border-radius: 18px; padding: 20px; text-align: center; display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 15px; color: #8A97AD; font-weight: 700;">Uma metodologia completa, por apenas</div>
+        <div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 52px); color: #26324B; line-height: 1;">{{ preco }}</div>
+        <div style="font-size: 14px; color: #8A97AD; font-weight: 600;">Pagamento único · Acesso imediato · Imprima quantas vezes quiser</div>
+      </div>
+      <a href="{{ ctaLink }}" style="display: block; text-align: center; background: #F5A25D; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: clamp(18px, 2.5vw, 22px); padding: 18px 32px; border-radius: 999px; box-shadow: 0 6px 0 rgba(200,115,40,0.35);" style-hover="background: #ED8F41; color: #fff;">Quero começar hoje</a>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #E9F7EE; display: grid; place-items: center; font-size: 24px; color: #3C8C5C; font-weight: 800; font-family: 'Baloo 2', sans-serif; flex-shrink: 0;">{{ garantiaDias }}</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #52607A; max-width: 46ch;"><strong style="color: #26324B;">Garantia de {{ garantiaDias }} dias.</strong> Se você sentir que o sistema não é para a sua família, devolvemos 100% do valor. Sem perguntas, sem burocracia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section data-screen-label="FAQ" style="padding: clamp(56px, 8vw, 96px) 24px; background: #FFFDF6;">
+  <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+    <h2 style="margin: 0; text-align: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(26px, 3.5vw, 36px); color: #26324B;">Perguntas frequentes</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <details style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 4px 22px;">
+        <summary style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #26324B;">Será que meu filho vai usar?<span class="faq-chev" style="color: #F5A25D; font-size: 22px; transition: transform 0.2s; flex-shrink: 0;">+</span></summary>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #52607A;">O sistema foi criado justamente para crianças que se beneficiam de apoio visual. Ele pode ser adaptado ao ritmo e aos interesses do seu filho — cada família usa do seu jeito, começando pelo que fizer mais sentido.</p>
+      </details>
+      <details style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 4px 22px;">
+        <summary style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #26324B;">É difícil de aplicar? Preciso entender de ABA?<span class="faq-chev" style="color: #F5A25D; font-size: 22px; transition: transform 0.2s; flex-shrink: 0;">+</span></summary>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #52607A;">Não. O Guia Prático dos Pais mostra o passo a passo em linguagem simples. Você não precisa de nenhum conhecimento técnico — só de alguns minutos por dia.</p>
+      </details>
+      <details style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 4px 22px;">
+        <summary style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #26324B;">Vou gastar muito tempo montando?<span class="faq-chev" style="color: #F5A25D; font-size: 22px; transition: transform 0.2s; flex-shrink: 0;">+</span></summary>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #52607A;">Leva poucos minutos. Você imprime apenas o que precisa, monta uma vez e depois só atualiza a rotina no dia a dia. O sistema foi pensado para caber na rotina real de uma família.</p>
+      </details>
+      <details style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 4px 22px;">
+        <summary style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #26324B;">É só mais um PDF?<span class="faq-chev" style="color: #F5A25D; font-size: 22px; transition: transform 0.2s; flex-shrink: 0;">+</span></summary>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #52607A;">Não. É uma metodologia completa: planejamento, rotinas visuais, comunicação e reforço positivo trabalhando juntos, com identidade visual consistente em todos os materiais. Você imprime apenas as partes que sua família vai usar.</p>
+      </details>
+      <details style="background: #fff; border: 2px solid #F0EAD9; border-radius: 18px; padding: 4px 22px;">
+        <summary style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #26324B;">Serve para professores e terapeutas?<span class="faq-chev" style="color: #F5A25D; font-size: 22px; transition: transform 0.2s; flex-shrink: 0;">+</span></summary>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #52607A;">Sim. O sistema também é usado por professores, ATs, terapeutas, avós e cuidadores — os materiais funcionam em casa, na escola e no consultório.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section data-screen-label="CTA final" style="padding: clamp(56px, 8vw, 96px) 24px; background: #4EA8DE;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+    <h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(26px, 4vw, 38px); color: #fff; line-height: 1.25; text-wrap: balance;">Amanhã de manhã, seu filho pode acordar sabendo exatamente como será o dia.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #E3F2FC; max-width: 52ch;">Menos improviso para você. Mais segurança para ele. Uma pequena conquista de cada vez.</p>
+    <a href="{{ ctaLink }}" style="background: #fff; color: #3E8FC7; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; padding: 18px 40px; border-radius: 999px; box-shadow: 0 6px 0 rgba(30,90,130,0.3);" style-hover="background: #FFF6E3; color: #2E6FA0;">Quero organizar nossa rotina</a>
+  </div>
+</section>
+
+<footer style="background: #26324B; padding: 32px 24px; text-align: center;">
+  <div style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; color: #fff;">Rotina <span style="color: #7FC4EC;">TEA</span></div>
+  <p style="margin: 10px auto 0; font-size: 13px; line-height: 1.6; color: #9AA8C2; max-width: 60ch;">O Kit Rotina TEA é um sistema visual de organização de rotina. Não é um tratamento e não substitui o acompanhamento de profissionais de saúde.</p>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headlineOpcao&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Copy&quot;},&quot;preco&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;R$ 47&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Oferta&quot;},&quot;garantiaDias&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;min&quot;:7,&quot;max&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Oferta&quot;},&quot;linkCheckout&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#oferta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Oferta&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const headlines = {
+      "1": "Ajude seu filho com TEA a compreender a rotina do dia e conquistar mais autonomia usando um sistema visual simples de aplicar.",
+      "2": "Transforme a rotina da sua criança com TEA em poucos minutos por dia usando um sistema visual criado para facilitar a organização.",
+      "3": "Chega de improvisar todos os dias. Organize a rotina da sua criança com TEA usando um método visual que toda a família consegue aplicar."
+    };
+    return {
+      headline: headlines[this.props.headlineOpcao ?? "3"] || headlines["3"],
+      preco: this.props.preco ?? "R$ 47",
+      ctaLink: this.props.linkCheckout ?? "#oferta",
+      garantiaDias: this.props.garantiaDias ?? 7
+    };
+  }
+}
+</script>
+</body>
+</html>
